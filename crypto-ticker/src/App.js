@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Logo from "./logo/bitcoin.png"
 
 const App = () => {
   return (
     <div className="App">
-        <p>
-           <code>src/App.js</code> and save to reload.
-        </p>
-<h1>Crypto Ticker</h1>
-    </div>
+    <img src={Logo} width={250} height={150} alt="Crypto Logo" />
+    <h1 className="title">Live Crypto Price</h1>
+    <h5 className="subtitle">Bitcoin To The Moon 🚀🌕</h5>
+  </div>
   );
 }
 
