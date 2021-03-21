@@ -42,6 +42,10 @@ const App = () => {
         Bitcoin price updated every 10 seconds seconds from{' '}
         <a href="https://wazirx.com/">WazirX API</a>
       </p>
+      <p>
+        Follow me on twitter: {' '}
+        <a href="https://twitter.com/prakashwagle89">@prakashwagle89</a>
+      </p>
   </div>
   );
 }
