@@ -36,7 +36,7 @@ const App = () => {
     <div className="prices-container">
       {/* <PriceCard type = "low" price={ticker.low}/>
       <PriceCard type = "high" price={ticker.high}/> */}
-      <PriceCard type = "current" price={ticker.price_usd}/>
+      <PriceCard type = "current" price={Math.round(ticker.price_usd)}/>
       </div>
       <p>
         Bitcoin price updated every 10 seconds seconds from{' '}
