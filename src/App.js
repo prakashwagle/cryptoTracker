@@ -9,16 +9,16 @@ const App = () => {
   const [ticker, setTicker] = useState({
     low: 0,
     high: 0,
-    last: 0,
+    price_usd: 0,
   });
 
   useEffect(()=>{
     async function getCryptoPrice(){
       const {data} = await axios.get(
-        'https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/btcusdt'
+        'http://rest.coinapi.io/v1/assets/BTC?apikey=8BEF4BD6-E442-4793-AC1C-8C6622209651'
         );
-        console.log("Hi",data.ticker);
-      setTicker(data.ticker);
+        console.log("Hi",data[0].price_usd);
+      setTicker(data[0]);
     }
     getCryptoPrice()
     const interval = setInterval(()=> getCryptoPrice(),10000);
@@ -34,9 +34,9 @@ const App = () => {
     <h1 className="title">Live Crypto Price</h1>
     <h5 className="subtitle">Bitcoin To The Moon 🚀🌕</h5>
     <div className="prices-container">
-      <PriceCard type = "low" price={ticker.low}/>
-      <PriceCard type = "high" price={ticker.high}/>
-      <PriceCard type = "current" price={ticker.last}/>
+      {/* <PriceCard type = "low" price={ticker.low}/>
+      <PriceCard type = "high" price={ticker.high}/> */}
+      <PriceCard type = "current" price={ticker.price_usd}/>
       </div>
       <p>
         Bitcoin price updated every 10 seconds seconds from{' '}
