@@ -15,7 +15,7 @@ const App = () => {
   useEffect(()=>{
     async function getCryptoPrice(){
       const {data} = await axios.get(
-        'http://rest.coinapi.io/v1/assets/BTC?apikey=8BEF4BD6-E442-4793-AC1C-8C6622209651'
+        'https://rest.coinapi.io/v1/assets/BTC?apikey=8BEF4BD6-E442-4793-AC1C-8C6622209651'
         );
         console.log("Hi",data[0].price_usd);
       setTicker(data[0]);
